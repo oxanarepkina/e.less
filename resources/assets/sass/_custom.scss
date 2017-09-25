@@ -1,0 +1,68 @@
+// currency input styles
+.input-euro {
+  position: relative;
+}
+
+.input-euro.left input {
+  padding-left: 18px;
+}
+
+.input-euro.right input {
+  padding-right: 18px;
+  text-align: end;
+}
+
+.input-euro:before {
+  position: absolute;
+  top: 0;
+  content: "€";
+}
+
+.input-euro.left:before {
+  left: 5px;
+}
+
+.input-euro.right:before {
+  right: 5px;
+}
+
+input.currency:before {
+  content: attr(data-symbol);
+  float: left;
+  color: #aaa;
+}
+
+// icons styles
+.glyphicon-remove-sign {
+  color: red;
+}
+
+.glyphicon-ok {
+  color: green;
+}
+
+// rating stars style
+
+.rating {
+  float: left;
+  margin-top: 8px;
+}
+
+.rating span {
+  float: right;
+  position: relative;
+}
+
+.rating span input {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+}
+
+.rating span:hover ~ span label,
+.rating span:hover label,
+.rating span.checked label,
+.rating span.checked ~ span label {
+  color: #ffe400;
+}

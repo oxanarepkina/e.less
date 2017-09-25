@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('form');
+Route::get('/success', function () {
+    return view('welcome');
 });
+
+Route::get('/', 'MainController@display');
+
+Route::post('/submit', 'MainController@submit');
