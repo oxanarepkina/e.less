@@ -31693,7 +31693,23 @@ module.exports = function spread(callback) {
 /* 35 */
 /***/ (function(module, exports) {
 
-$(document).ready(function () {
+$.noConflict();
+jQuery(document).ready(function ($) {
+
+    $("input[name='Alter']").on("keyup", function () {
+        $("input[name='number']").val(destroyMask(this.value));
+        this.value = createMask($("input[name='number']").val());
+    });
+
+    function createMask(string) {
+        console.log(string);
+        return string.replace(/(\d{2})/, "$1");
+    }
+
+    function destroyMask(string) {
+        console.log(string);
+        return string.replace(/\D/g, '').substring(0, 4);
+    }
 
     var userRating;
 
@@ -31704,8 +31720,10 @@ $(document).ready(function () {
         $(this).parent().addClass('checked');
     });
 
-    $('input:radio').change(function () {
+    $('.rating input:radio').change(function () {
         userRating = this.value;
+        $(this).closest('.form-group').find("input[type='hidden']").val(userRating);
+        // console.log(userRating);
     });
 
     $('#feedbackForm').on('submit', function (e) {
@@ -41986,9 +42004,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-98aa28b6", Component.options)
+    hotAPI.createRecord("data-v-2514e4f8", Component.options)
   } else {
-    hotAPI.reload("data-v-98aa28b6", Component.options)
+    hotAPI.reload("data-v-2514e4f8", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -42163,7 +42181,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-98aa28b6", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-2514e4f8", module.exports)
   }
 }
 

@@ -1,7 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Form Page</h1>
+    <h1>Feedback Form</h1>
+
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
 
     {{ Form::open(array('url' => '/submit', 'class'=>'form-horizontal', 'id' => 'feedbackForm')) }}
 
@@ -14,7 +20,6 @@
             {{ Form::submit('Absenden', ['class' => 'btn btn-primary']) }}
         </div>
     </div>
-
 
     {{ Form::close() }}
 

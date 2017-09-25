@@ -30,6 +30,6 @@ class MainController extends Controller
 
         $feedback->save();
 
-        return redirect('/success');
+        return redirect('/')->with('success', 'Your message was successfully sent!');
     }
 }

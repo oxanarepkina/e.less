@@ -1,4 +1,22 @@
-$(document).ready(function () {
+$.noConflict();
+jQuery(document).ready(function ($) {
+
+    $("input[name='Alter']").on("keyup", function(){
+        $("input[name='number']").val(destroyMask(this.value));
+        this.value = createMask($("input[name='number']").val());
+    })
+
+
+    function createMask(string){
+        console.log(string)
+        return string.replace(/(\d{2})/,"$1");
+    }
+
+    function destroyMask(string){
+        console.log(string)
+        return string.replace(/\D/g,'').substring(0, 4);
+    }
+
 
     var userRating;
 
@@ -9,9 +27,11 @@ $(document).ready(function () {
         $(this).parent().addClass('checked');
     });
 
-    $('input:radio').change(
+    $('.rating input:radio').change(
         function () {
             userRating = this.value;
+            $(this).closest('.form-group').find("input[type='hidden']").val(userRating);
+            // console.log(userRating);
         });
 
 
