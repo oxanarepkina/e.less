@@ -1,4 +1,3 @@
-**How to work with Laravel projects on github**
 
 Clone the repo to Your local directory:
 git clone https://github.com/oxanarepkina/e.less.git
@@ -27,9 +26,9 @@ npm install -g gulp
 Run gulp watch
 gulp watch
 
-# Project Title
+# How to work with Laravel projects on github
 
-One Paragraph of project description goes here
+Here is a
 
 ## Getting Started
 
