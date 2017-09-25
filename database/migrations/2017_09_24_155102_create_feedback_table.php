@@ -20,7 +20,7 @@ class CreateFeedbackTable extends Migration
             $table->string('product');
             $table->float('cost');
             $table->integer('rating');
-            $table->string('residence');
+            $table->string('residence')->nullable();
             $table->timestamps();
         });
     }
